@@ -45,5 +45,8 @@ RUN chmod +x /usr/local/bin/ammc-amb
 # Set up the appropriate ENTRYPOINT for each platform
 # ENV ARGS="-t -a -w 8123"
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
-ENTRYPOINT [ "ammc-amb", "${ARGS}" ]
+## add entrypoint.sh into the container
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT [ "/entrypoint.sh" ]
 # CMD [ $ARGS ]
