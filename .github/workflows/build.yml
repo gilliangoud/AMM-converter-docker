@@ -30,3 +30,6 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: docker push ${{ env.DOCKER_USERNAME }}/ammconverter:${{ github.sha }}
+
+      - name: Push Docker latest image to Docker Hub
+        run: docker push ${{ env.DOCKER_USERNAME }}/ammconverter:latest
