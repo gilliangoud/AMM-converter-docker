@@ -45,5 +45,5 @@ RUN chmod +x /usr/local/bin/ammc-amb
 # Set up the appropriate ENTRYPOINT for each platform
 # ENV ARGS="-t -a -w 8123"
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
-ENTRYPOINT [ "ammc-amb", $ARGS ]
+ENTRYPOINT [ "ammc-amb $ARGS" ]
 # CMD [ $ARGS ]
