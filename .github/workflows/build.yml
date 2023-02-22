@@ -26,10 +26,11 @@ jobs:
           password: ${{ env.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build --tag ${{ env.DOCKER_USERNAME }}/ammconverter:${{ github.sha }} .
+        run: |
+          docker build --tag ${{ env.DOCKER_USERNAME }}/ammconverter:${{ github.sha }} .
+          docker tag ${{ env.DOCKER_USERNAME }}/ammconverter:${{ github.sha }} ${{ env.DOCKER_USERNAME }}/ammconverter:latest
 
       - name: Push Docker image to Docker Hub
-        run: docker push ${{ env.DOCKER_USERNAME }}/ammconverter:${{ github.sha }}
-
-      - name: Push Docker latest image to Docker Hub
-        run: docker push ${{ env.DOCKER_USERNAME }}/ammconverter:latest
+        run: |
+          docker push ${{ env.DOCKER_USERNAME }}/ammconverter:${{ github.sha }}
+          docker push ${{ env.DOCKER_USERNAME }}/ammconverter:latest
