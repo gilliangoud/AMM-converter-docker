@@ -18,5 +18,5 @@ RUN unzip /ammc.zip -d /ammc \
 
 ENV ARGS="-t -a -w 8123"
 
-CMD ["/ammc/linux64/ammc-amb ", $ARGS]
+# CMD ["/ammc/linux64/ammc-amb ", $ARGS]
 
