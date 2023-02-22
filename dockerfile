@@ -43,7 +43,7 @@ RUN chmod +x /usr/local/bin/ammc-amb
 # RUN chmod +x /usr/local/bin/ammc-amb/windows64/ammc-amb.exe
 
 # Set up the appropriate ENTRYPOINT for each platform
-ENV ARGS="-t -a -w 8123"
+# ENV ARGS="-t -a -w 8123"
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
 ENTRYPOINT [ "ammc-amb" ]
 CMD [ $ARGS ]
