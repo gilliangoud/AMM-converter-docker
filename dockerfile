@@ -20,7 +20,8 @@
 FROM ubuntu:latest
 
 RUN apt-get update && \
-    apt-get install -y curl tzdata unzip && \
+    apt-get install -y curl unzip && \
+    DEBIAN_FRONTEND=noninteractive TZ=America/Vancouver apt-get -y install tzdata && \
     rm -rf /var/lib/apt/lists/*
 
 COPY ammc-v6.2.2.zip /ammc.zip
